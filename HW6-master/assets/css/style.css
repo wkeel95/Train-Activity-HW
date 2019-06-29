@@ -1,0 +1,49 @@
+.cf:before, .cf:after {
+    content: " ";
+    display: table;
+}
+
+.cf:after {
+    clear: both;
+}
+
+.cf {
+    *zoom: 1;
+}
+
+.fl {
+    float: left;
+    _display: inline;
+}
+
+.w-20 {
+    width: 20%;
+}
+
+.bg-black-10 {
+    background-color: rgba(0, 0, 0, .1);
+}
+
+.bg-black-05 {
+    background-color: rgba(0, 0, 0, .05);
+}
+
+.pv5 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.tc {
+    text-align: center;
+}
+.formContainer {
+    padding-left: 20px;
+    background-color: rgba(0, 0, 0, .05);
+    
+}
+#title {
+    padding-left: 50px;
+}
+.t1 {
+    padding-top: 50px;
+}

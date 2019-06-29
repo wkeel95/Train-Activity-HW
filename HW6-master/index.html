@@ -1,0 +1,132 @@
+<!-- * Make sure that your app suits this basic spec:
+  
+  * When adding trains, administrators should be able to submit the following:
+    
+    * Train Name
+    
+    * Destination 
+    
+    * First Train Time -- in military time
+    
+    * Frequency -- in minutes
+  
+  * Code this app to calculate when the next train will arrive; this should be relative to the current time.
+  
+  * Users from many different machines must be able to view same train times.
+  
+  * Styling and theme are completely up to you. Get Creative!
+
+
+
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.3/firebase-database.js"></script>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css" />
+</head>
+
+<body>
+    <div class="mainbox">
+        <div class="resultsbox">
+            <div class="resultsHeader">
+                <div id="title">
+                    <h3>Current Train Schedule</h3>
+                </div>
+                <div class="fl w-20 tc bb-m pv1 bg-black-10">
+                    <h4>Train Name</h4>
+                </div>
+                <div class="fl w-20 tc bb-m pv1 bg-black-10">
+                    <h4>Destination</h4>
+                </div>
+                <div class="fl w-20 tc bb-m pv1 bg-black-10">
+                    <h4>Frequency</h4>
+                </div>
+                <div class="fl w-20 tc bb-m pv1 bg-black-10">
+                    <h4>Next Arrival</h4>
+                </div>
+                <div class="fl w-20 tc bb-m pv1 bg-black-10">
+                    <h4>Minutes Away</h4>
+                </div>
+            </div>
+            <!-- <thead>
+                    <tr>
+                      <th scope="col"></th>
+                      <th scope="col"></th>
+                      <th scope="col"></th>
+                      <th scope="col"></th>
+                      <th scope="col"></th>
+                      <th scope="col"></th>
+                    </tr>
+                  </thead> -->
+            <div class="cf">
+                <div class="fl w-20 tc pv3 bg-black-05">
+                    1
+                </div>
+                <div class="fl w-20 tc pv3 bg-black-10">
+                    2
+                </div>
+                <div class="fl w-20 tc pv3 bg-black-05">
+                    3
+                </div>
+                <div class="fl w-20 tc pv3 bg-black-10">
+                    4
+                </div>
+                <div class="fl w-20 tc pv3 bg-black-05">
+                    5
+                </div>
+            </div>
+            <div id="here">
+
+            </div>
+        </div>
+        <div class="formContainer bt-m">
+            <form class="pa4 black-80">
+                <div class="t1">
+                    <h3>Add a Train</h3>
+                </div>
+                <div class="measure">
+                    <label for="trainName" class="f6 b db mb2">Train Name <span class="normal black-60"></span></label>
+                    <input id="trainName" class="input-reset ba b--black-20 pa2 mb2 db w-100" type="text" aria-describedby="name-desc">
+                    <small id="name-desc" class="f6 black-60 db mb2"></small>
+                </div>
+                <div class="measure">
+                    <label for="destination" class="f6 b db mb2">Destination <span
+                            class="normal black-60"></span></label>
+                    <input id="destination" class="input-reset ba b--black-20 pa2 mb2 db w-100" type="text" aria-describedby="name-desc">
+                    <small id="name-desc" class="f6 black-60 db mb2"></small>
+                </div>
+                <div class="measure">
+                    <label for="initTime" class="f6 b db mb2">First Train Time (HH:mm - military time) <span
+                            class="normal black-60"></span></label>
+                    <input id="initTime" class="input-reset ba b--black-20 pa2 mb2 db w-100" type="text" aria-describedby="name-desc">
+                    <small id="name-desc" class="f6 black-60 db mb2"></small>
+                </div>
+                <div class="measure">
+                    <label for="frequency" class="f6 b db mb2">Frequency (min) <span
+                            class="normal black-60"></span></label>
+                    <input id="frequency" class="input-reset ba b--black-20 pa2 mb2 db w-100" type="text" aria-describedby="name-desc">
+                    <small id="name-desc" class="f6 black-60 db mb2"></small>
+                </div>
+                <div class="ph3 mt4">
+                    <button id="newTrain" class="f6 link dim br3 ba ph3 pv2 mb2 dib black" href="#0">Submit</button>
+                </div>
+            </form>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script type="text/javascript" src="assets/js/app.js"></script>
+</body>
+
+</html>
